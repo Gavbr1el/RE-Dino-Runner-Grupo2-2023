@@ -1,6 +1,10 @@
 import pygame
 import os
 
+import pygame
+pygame.init()
+pygame.mixer.init()
+
 # Global Constants
 TITLE = "Dino Runner Game"
 SCREEN_HEIGHT = 600
@@ -18,7 +22,7 @@ RUNNING = [
 
 RUNNING_SHIELD = [
     pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun1Shield.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun2Shield.png")),
 ]
 
 RUNNING_HAMMER = [
@@ -37,7 +41,7 @@ DUCKING = [
 
 DUCKING_SHIELD = [
     pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck1Shield.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck2Shield.png")),
 ]
 
 DUCKING_HAMMER = [
@@ -67,6 +71,14 @@ HAMMER = pygame.image.load(os.path.join(IMG_DIR, 'Other/hammer.png'))
 
 BG = pygame.image.load(os.path.join(IMG_DIR, 'Other/Track.png'))
 
-HEART = pygame.image.load(os.path.join(IMG_DIR, 'Other/SmallHeart.png'))
+COIN = pygame.image.load(os.path.join(IMG_DIR, 'Other/coin_a.png'))
 
 DEFAULT_TYPE = "default"
+SHIELD_TYPE = "shield"
+COIN_TYPE = "coin"
+
+SHIELD_SOUND = pygame.mixer.Sound(os.path.join(IMG_DIR, 'Other/shield_sound.mp3'))
+COIN_SOUND = pygame.mixer.Sound(os.path.join(IMG_DIR, 'Other/coin_sound.mp3'))
+JUMP_SOUND = pygame.mixer.Sound(os.path.join(IMG_DIR, 'Other/jump_sound.wav'))
+LOSE_SOUND = pygame.mixer.Sound(os.path.join(IMG_DIR, 'Other/lose_sound.wav'))
+DESTROY_OBS = pygame.mixer.Sound(os.path.join(IMG_DIR, 'Other/destroy_obstacle.wav'))
